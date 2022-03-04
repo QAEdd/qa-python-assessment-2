@@ -30,8 +30,17 @@
 # <HINT>
 # How does a for loop iterate through a string?
 
+from pickletools import string1
+from tkinter.tix import INTEGER
+
 def one(string):
-    return ""
+    string2 = ''
+    for i in string:
+        string2 = string2 + i
+        string2 = string2 + i
+        string2 = string2 + i
+    return string2
+
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -52,7 +61,13 @@ def one(string):
 
 
 def two(number):
-    return False
+    x = number - 1
+    while x !=1:
+        if (number / x).is_integer():
+            return False
+        x = x - 1
+        print(x)
+    return True
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -72,7 +87,15 @@ def two(number):
 
 
 def three(a):
-    return 1
+    b = a * 2
+    c = a * 3
+    d = a * 4
+    a = int(a)
+    b = int(b)
+    c = int(c)
+    d = int(d)
+    e = a + b + c + d
+    return e
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -104,7 +127,18 @@ def three(a):
 
 
 def four(string1, string2):
-    return ""
+    if len(string1) == len(string2):
+        i = len(string1)
+        x = 0
+        string3 = ''
+        while x != i:
+            string3 = string3 + (string1[x] + string2[x])
+            x = x + 1
+    else:
+        return 'strings not equal length'
+
+
+    return string3
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -121,10 +155,17 @@ def four(string1, string2):
     # <HINT>
     # There is a module which can be used to generate random numbers, this module is called random.
     # The random module contains a function called randint.
-
+import random
 
 def five():
-    return []
+    i = 0
+    list = []
+    while i != 5:
+        x = random.randint(100,200)
+        if (x / 2).is_integer():
+            list.append(x)
+            i = i + 1
+    return list
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -146,6 +187,9 @@ def five():
 
 
 def six(string):
+    x = len(string) - 1
+    if string[x] == 'y' and string[x - 1] == 'p':
+        return True
     return False
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
@@ -173,6 +217,16 @@ def six(string):
 
 
 def seven(a, b, c):
+    x = []
+    x.append(a)
+    x.append(b)
+    x.append(c)
+    x.sort()
+    a == x[0]
+    b == x[1]
+    c == x[2]
+    if (b - a) == (c - b):
+        return True
     return False
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
@@ -194,8 +248,16 @@ def seven(a, b, c):
 
 
 def eight(string,  a):
-    return ""
+    while a != 1:
+        v = len(string) + 1
+        v = v / 2
+        v = int(v)
+        b = string[v]
+        string = string.replace(b, "")
+        a = a - 1
+    return string
 
+# print(eight("hello",3))
 # -------------------------------------------------------------------------------------------------------------------------------------------------
 
     # <QUESTION 9>
@@ -214,6 +276,20 @@ def eight(string,  a):
 
 
 def nine(string1, string2):
+    count = 0
+    if len(string1) >= len(string2):
+        for i in string1:     
+            if string2.find(i) + 1:
+                count = count + 1          
+            if count == len(string2):
+                return True
+    else:
+        for i in string2:
+            if (string1.find(i) + 1):
+                count = count + 1
+            if count == len(string1):
+                return True
+
     return False
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
@@ -235,6 +311,10 @@ def nine(string1, string2):
 
 
 def ten(x, y):
-    return []
+    z = [[0 for i in range(x)] for k in range(y)]
+    for i in range(y):
+        for k in range(x):
+            z[i][k] = i * k
+    return z
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------
